@@ -1,0 +1,9 @@
+<p>showappart works!</p>
+{{ id }}
+<ul>
+  <div *ngFor="let a of appartementsList; let i = index">
+    <div *ngIf="id == a.residence.id">
+      <li>{{ a.category }}</li>
+    </div>
+  </div>
+</ul>
