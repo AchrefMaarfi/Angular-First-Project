@@ -10,6 +10,7 @@ import { Residence } from '../models/residence';
 })
 export class ShowappartComponent implements OnInit{
 
+  // get appartement id from url
   id = 0;
   constructor(private activateRouter: ActivatedRoute) { }
 

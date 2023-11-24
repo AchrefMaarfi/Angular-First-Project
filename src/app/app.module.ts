@@ -3,14 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResidencesComponent } from './residences/residences.component';
 import { FooterComponent } from './footer/footer.component';
-import { RouterModule, Routes } from '@angular/router';
 import { CardresidenceComponent } from './cardresidence/cardresidence.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ShowappartComponent } from './showappart/showappart.component';
+import { AnnonceModule } from './annonce/annonce.module';
+import { FormAppartComponent } from './form-appart/form-appart.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,15 @@ import { ShowappartComponent } from './showappart/showappart.component';
     FooterComponent,
     CardresidenceComponent,
     PagenotfoundComponent,
-    ShowappartComponent
+    ShowappartComponent,
+    FormAppartComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AnnonceModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

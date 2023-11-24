@@ -1,0 +1,58 @@
+<p>form-appart works!</p>
+{{ id }}
+<div class="container">
+  <form [formGroup]="appartForm">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Num appart</span>
+      </div>
+      <input
+        type="text"
+        aria-label="numAppart"
+        id="numAppart"
+        name="numAppart"
+        class="form-control"
+        formControlName="numAppart"
+      />
+      <br />
+
+      <div
+        *ngIf="numAppart!.touched && numAppart!.invalid"
+        class="alert alert-danger"
+      >
+        num Appart is required
+      </div>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Description</span>
+      </div>
+      <div>
+        <textarea
+          type="text"
+          aria-label="description"
+          id="description"
+          name="description"
+          class="form-control"
+          formControlName="description"
+        ></textarea>
+        <br />
+
+        <div
+          *ngIf="description!.touched && description!.invalid"
+          class="alert alert-danger"
+        >
+          description is required
+          <div
+            *ngIf="description!.errors?.['minlength']"
+            class="alert alert-danger"
+          >
+            min length description is 10
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <input class="btn btn-secondary" type="submit" (click)="add()" />
+  </form>
+</div>
